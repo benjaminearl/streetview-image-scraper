@@ -1,0 +1,20 @@
+{
+  "name": "street-view-scrape",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "file-system": "^2.2.2",
+    "geojson": "^0.5.0",
+    "image-download": "^1.1.0",
+    "image-downloader": "^3.3.0",
+    "puppeteer": "^1.4.0",
+    "request": "^2.85.0"
+  }
+}
