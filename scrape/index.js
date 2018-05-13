@@ -27,13 +27,13 @@ for (var i = 0; i < latitudeList.length; i++){
     };
 };
 
-for (var i = 0; i < coordinates.length; i++) {
+coordinates.forEach(function(coordinate) {
     var download = function(uri, filename, callback){
-            request.head(uri, function(err, res, body){
-                request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
-        });
-    }
-    download(`https://maps.googleapis.com/maps/api/streetview?location=${coordinates[i]}&size=456x456key=AIzaSyB4I4Q-kAff_pEK869igqNhN5xtc0qKpo4`, `${coordinates[i]}.jpg`, function(){
-        console.log(coordinates[i]);
+        request.head(uri, function(err, res, body){
+            request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
     });
-};
+    }
+    download(`https://maps.googleapis.com/maps/api/streetview?size=640x640&location=${coordinate}&fov=90&heading=235&pitch=10&key=APIKEY`, `${coordinate}.jpg`, function(){
+    console.log(`${coordinate}`);
+    });
+});
